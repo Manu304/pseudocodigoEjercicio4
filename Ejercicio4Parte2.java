@@ -7,18 +7,13 @@ public class Ejercicio4Parte2 {
     public static void main(String[] args) {
         String menorP = "", mayorP = "";
         int menorE = 1, mayorE = 1;
-        final int MUESTRA = 4;
+        final int MUESTRA = 20;
         Scanner scanner = new Scanner(System.in);
         for (int i=0; i < MUESTRA; i++ ){
             System.out.print("Ingrese el nombre de la persona: ");
             String nombre = scanner.next();
             System.out.print("Ingrese la edad de la persona: ");
             int edad = scanner.nextInt();
-
-            if((edad == mayorE) && (edad == menorE)){
-                mayorE = menorE = edad;
-                mayorP = menorP = nombre;
-            }
                 
             if(edad >= mayorE){
                 mayorP = nombre;
@@ -26,6 +21,10 @@ public class Ejercicio4Parte2 {
             }else{
                 menorP = nombre;
                 menorE = edad;  
+            }
+            if(menorP.equals("")){
+                menorP = mayorP;
+                menorE = mayorE;
             }
         }
         System.out.println("\nLa persona mayor es: " + mayorP + " ("+mayorE+" años)"
