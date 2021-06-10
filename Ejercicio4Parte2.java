@@ -12,19 +12,23 @@ public class Ejercicio4Parte2 {
         for (int i=0; i < MUESTRA; i++ ){
             System.out.print("Ingrese el nombre de la persona: ");
             String nombre = scanner.next();
-            System.out.print("\nIngrese la edad de la persona: ");
+            System.out.print("Ingrese la edad de la persona: ");
             int edad = scanner.nextInt();
-            System.out.println("\n");
 
-            if(edad <= menorE){
-                menorP = nombre;
-                menorE = edad;  
-            }else{
+            if((edad == mayorE) && (edad == menorE)){
+                mayorE = menorE = edad;
+                mayorP = menorP = nombre;
+            }
+                
+            if(edad >= mayorE){
                 mayorP = nombre;
                 mayorE = edad;
+            }else{
+                menorP = nombre;
+                menorE = edad;  
             }
         }
-        System.out.println("\nLa persona mayor es: " + mayorP + "("+mayorE+" años)"
-                        + ". La persona menor es: "+ menorP + "("+menorE+" años).");
+        System.out.println("\nLa persona mayor es: " + mayorP + " ("+mayorE+" años)"
+                        + ". La persona menor es: "+ menorP + " ("+menorE+" años).");
     }  
 }
